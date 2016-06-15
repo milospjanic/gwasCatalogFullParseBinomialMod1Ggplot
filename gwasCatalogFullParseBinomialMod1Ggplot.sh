@@ -78,9 +78,9 @@ wc -l $1
 rm tmp
 
 #select top overlaps
-find -name "*sort.uniq.chrXY.overlap" -type f -exec wc -l {} + | grep -v total$ | sort -rn  | head -n20
+find -name "*sort.uniq.chrXY.overlap" -type f -exec wc -l {} + | grep -v total$ | sort -rn  | head -n5
 
-find -name "*sort.uniq.chrXY.overlap" -type f -exec wc -l {} + | grep -v total$ | sort -rn  | head -n20 > top
+find -name "*sort.uniq.chrXY.overlap" -type f -exec wc -l {} + | grep -v total$ | sort -rn  | head -n100 > top
 cut -f5 -d" " top > top2
 tr '\n' ' ' < top2 >top3
 for i in $(cat top3); do cp $i $i.select;done
@@ -196,7 +196,13 @@ echo "colnames(data)<-c(\"LogP\", \"FC\", \"Phenotype SNPs\", \"Category\")">>sc
 #short row names
 echo "gsub(\"GWASCatalogPhenotype_\",\"\",rownames(data))">>script.R
 echo "rownames(data) = gsub(\"GWASCatalogPhenotype_\",\"\",rownames(data))">>script.R
+
+#select top
+echo "data <- data[order(data\$LogP,decreasing = TRUE), ]">>script.R
 echo "data">>script.R
+echo "data <- data[1:20, ]">>script.R
+echo "data">>script.R
+
 #making ggplot2 graph
 echo "library(ggplot2)" >> script.R
 echo "library(wesanderson)">>script.R
