@@ -200,7 +200,7 @@ echo "rownames(data) = gsub(\"GWASCatalogPhenotype_\",\"\",rownames(data))">>scr
 #select top
 echo "data <- data[order(data\$LogP,decreasing = TRUE), ]">>script.R
 echo "data">>script.R
-echo "data <- data[1:20, ]">>script.R
+echo "data <- data[1:25, ]">>script.R
 echo "data">>script.R
 
 #making ggplot2 graph
@@ -221,3 +221,5 @@ echo "dev.off()">>script.R
 chmod 775 script.R
 ./script.R
 rm script.R
+rm GWASCatalogPhenotype*
+rm top*
