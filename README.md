@@ -8,10 +8,10 @@ Fat_distribution_(HIV) 14 1 7.14286 6.53425e-06 20499
 Breast_size 31 1 3.22581 6.51831e-06 20449
 Periodontitis_(CDC-AAP) 26 1 3.84615 6.66176e-06 20899
 Keloid 4 1 25 6.50238e-06 20399
+CardiogramPlusC4D 52 1 1.92308 6.50238e-06 20399
 Response_to_alcohol_consumption_(flushing_response) 3 1 33.3333 6.66176e-06 20899
 Multiple_sclerosis_(severity) 12 1 8.33333 6.55019e-06 20549
 Tanning 15 2 13.3333 1.32119e-05 41448
-_CardiogramPlusC4D 52 1 1.92308 6.50238e-06 20399
 Systemic_lupus_erythematosus 108 3 2.77778 1.94912e-05 61147
 Obesity-related_traits 833 5 0.60024 3.38507e-05 106195
 Migraine 70 2 2.85714 1.31482e-05 41248
