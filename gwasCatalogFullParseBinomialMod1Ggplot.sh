@@ -14,7 +14,9 @@ mv tmp GwasCatalog.bed
 
 
 #adding CardiogramPlusC4D to GWASCatalog
-awk -F"\t" '{print $1"\t"$2"\t"$3"\t"$4"\t","CardiogramPlusC4D"}' CARDIOGRAMplusC4DleadSNPs.bed  > CARDIOGRAMC4Dplusnovel.txt.tmp
+wget https://stanfordmedicine.box.com/shared/static/pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed
+mv pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed CARDIOGRAMplusC4DleadSNPs.bed
+awk '{print $1,$2,$3,$4,"CardiogramPlusC4D"}' FS='\t' OFS='\t' CARDIOGRAMplusC4DleadSNPs.bed  > CARDIOGRAMC4Dplusnovel.txt.tmp
 sed -i 's/^chr//g' CARDIOGRAMC4Dplusnovel.txt.tmp
 cat CARDIOGRAMC4Dplusnovel.txt.tmp >> GwasCatalog.bed
 rm CARDIOGRAMC4Dplusnovel.txt.tmp
@@ -39,7 +41,8 @@ find -name "GWASCatalogPhenotype_*" -type f | rename 's/ /_/g'
 
 for file in `find . -name "GWASCatalogPhenotype_*.txt"`
 do
-  echo Phenotype: $(basename $file .txt) >> report.txt
+  filename=$(basename $file .txt)
+  echo Phenotype: ${filename##GWASCatalogPhenotype_} >> report.txt
 wc -l < "$file" >> report.txt
 done
 echo "***Finished parsing Gwas Catalog SNP-phenotype associations per category***"
@@ -69,7 +72,8 @@ echo ***Overlapping Phenotype SNPs with input bed***>>report.txt
 for file in `find . -name "GWASCatalogPhenotype_*.txt.cut.sort.uniq.chrXY"`
 do
 bedtools intersect -a $file -b $1 > $file.overlap
-echo Number of Overlapping Phenotype SNPs with input bed: $(basename $file .txt.cut.sort.uniq.chrXY) >>report.txt
+filename=$(basename $file .txt.cut.sort.uniq.chrXY)
+echo Overlap: ${filename##GWASCatalogPhenotype_} >>report.txt
 wc -l < $file.overlap >>report.txt
 done
 echo ***Finished overlapping GWAS Catalog Phenotype specific bed with input bed***
@@ -123,26 +127,27 @@ echo "#!/usr/bin/Rscript" > script.R
 echo "existingDF <- as.data.frame(matrix(seq(4),nrow=1,ncol=4))" >>script.R
 #calculate coverage and fraction per category, load into R script
 i=1
+echo GWAS Catalog Phenotype     Total SNPs      Overlap Fold change     Fraction of hg19        Peak coverage > output.table.txt
+
 for file in `find . -name "GWASCatalogPhenotype_*.txt.cut.sort.uniq.chrXY.select.overlap.input.int.cut"`
 do
 let i=i+1
 #removing input spaces and '
 var2a=$(echo $(basename $file .txt.cut.sort.uniq.chrXY.select.overlap.input.int.cut) | tr ' ' "_")
 var2=${var2a//[^[a-zA-Z0-9_]]/}
-echo Input terms no spaces: $var2 >>report.txt
 
 var3="$(cat "$file" | awk '{ sum+=($3-$2)} END {print sum}')"
 
 fra=$(cat "$file" | awk '{ sum+=($3-$2)} END {print sum/"'"$hg19"'"}')
 
 #calculating fold change
-
 overlap="$(wc -l $(basename $file .txt.cut.sort.uniq.chrXY.select.overlap.input.int.cut).txt.cut.sort.uniq.chrXY.overlap.select | cut -f1 -d ' ')"
 total="$(wc -l $(basename $file .txt.cut.sort.uniq.chrXY.select.overlap.input.int.cut).txt.cut.sort.uniq.chrXY.select | cut -f1 -d ' ')"
 fold="$(awk 'BEGIN {print (100*"'"$overlap"'"/"'"$total"'")}')"
 filename=$(basename $file .txt.cut.sort.uniq.chrXY.select.overlap.input.int.cut)
-echo GWAS Catalog Phenotype: ${filename##GWASCatalogPhenotype_} Total SNPs: $total Overlap: $overlap Fold change: $fold Fraction of hg19 $fra GWAS phenotype SNPs - peak coverage sum from the input bed: $var3
- 
+
+echo GWAS Catalog Phenotype: ${filename##GWASCatalogPhenotype_} Total SNPs: $total Overlap: $overlap Fold change: $fold Fraction of hg19 $fra Peak coverage: $var3
+echo ${filename##GWASCatalogPhenotype_}	$total	$overlap	$fold	$fra	$var3 >> output.table.txt 
 
 echo  "x<-dbinom ($(wc -l $(basename $file .txt.cut.sort.uniq.chrXY.select.overlap.input.int.cut).txt.cut.sort.uniq.chrXY.overlap.select | cut -f1 -d ' '), $(wc -l $(basename $file .txt.cut.sort.uniq.chrXY.select.overlap.input.int.cut).txt.cut.sort.uniq.chrXY.select | cut -f1 -d ' '), "$fra")" >> script.R
 echo "y<-"$fold"">> script.R
@@ -218,6 +223,8 @@ echo "dev.off()">>script.R
 
 chmod 775 script.R
 ./script.R
-#rm script.R
+rm script.R
 rm GWASCatalogPhenotype*
 rm top*
+rm hg19.chrom.sizes
+rm gwascatalog.txt
