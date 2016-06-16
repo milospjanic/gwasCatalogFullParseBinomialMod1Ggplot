@@ -261,4 +261,4 @@ Loading required package: proto
 Scale for 'colour' is already present. Adding another scale for 'colour', which will replace the existing scale.
 null device 
           1 
-</pre/
+</pre>
