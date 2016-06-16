@@ -32,20 +32,41 @@ Alcohol_dependence_(age_at_onset) 26 2 7.69231 1.30844e-05 41048
 #Screen output
 <pre>
 ./gwasCatalogFullScanBinomialGgplot.sh ARNT.chipseq.cut.10000 
---2016-06-16 11:10:14--  http://www.genome.gov/admin/gwascatalog.txt
+--2016-06-16 12:32:09--  http://www.genome.gov/admin/gwascatalog.txt
 Resolving www.genome.gov (www.genome.gov)... 156.40.242.24
 Connecting to www.genome.gov (www.genome.gov)|156.40.242.24|:80... connected.
 HTTP request sent, awaiting response... 301 Moved Permanently
 Location: https://www.genome.gov/admin/gwascatalog.txt [following]
---2016-06-16 11:10:14--  https://www.genome.gov/admin/gwascatalog.txt
+--2016-06-16 12:32:09--  https://www.genome.gov/admin/gwascatalog.txt
 Connecting to www.genome.gov (www.genome.gov)|156.40.242.24|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 10407265 (9.9M) [text/plain]
 Saving to: `gwascatalog.txt'
 
-100%[=======================================================================================================================================================>] 10,407,265  1.48M/s   in 7.0s    
+100%[=======================================================================================================================================================>] 10,407,265  1.47M/s   in 7.1s    
 
-2016-06-16 11:10:22 (1.42 MB/s) - `gwascatalog.txt' saved [10407265/10407265]
+2016-06-16 12:32:17 (1.40 MB/s) - `gwascatalog.txt' saved [10407265/10407265]
+
+--2016-06-16 12:32:18--  https://stanfordmedicine.box.com/shared/static/pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed
+Resolving stanfordmedicine.box.com (stanfordmedicine.box.com)... 74.112.184.85, 107.152.24.197, 74.112.185.182
+Connecting to stanfordmedicine.box.com (stanfordmedicine.box.com)|74.112.184.85|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://stanfordmedicine.app.box.com/shared/static/pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed [following]
+--2016-06-16 12:32:18--  https://stanfordmedicine.app.box.com/shared/static/pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed
+Resolving stanfordmedicine.app.box.com (stanfordmedicine.app.box.com)... 74.112.185.87, 74.112.184.87, 107.152.24.199
+Connecting to stanfordmedicine.app.box.com (stanfordmedicine.app.box.com)|74.112.185.87|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://dl.boxcloud.com/d/1/68Jy8knXO2QKrBbbRXd88q2tjBgSZ-O1IHUO8OMH7MwUf963W573e-JFFoHJ7EAJDHUlZRmb-X5ltqHgFJGdPlmsPUdEAFW0e4hGculzAFt-rk7108ylZovCOs-FO8ii9nXylV6UIxzHX9-w2-qg37FMwEuDVyH_Sg8aqEWI7MX4GjTDg5nj9JRzNumSDRjwL1zf8nULuiLBEE5c_eeZReW2Pq3BnI6G44Tu2pD0l9tfXjF9fFTRaANo5phCkSU_2cAc2aGsXeTaI5zBiHjbclc2C2QHKsiSByzg13FXKBcnqbge2qzLRnjfyTQZjR6guZbX3x0tiMIYRtAs4xesRZ71R5PqFMiJ4qFM1c_ZEZJ82QqOEhgzT-pN6shMVfe9Quxm0b3rO_vr3gbOkpFD3qnNn8bkmznaGs2s2IDoR7qLHIjLU4mRpkV9_SFzEiOj4827LOtPNKgV0tSPiOu6PpudRQlfkYtnAP5WnHNBK9-mHkBQ79weScffqf8oNbsAPd_rqLAtyy9vcBZVpev08QOy_hhnzTCdyxVUrsPtgUc8Vowh_m1iK-AlKQFDdDn8JSNH8bqpEqHQcaNEp6UA-haJ_hd6hpKrftZSENiXaE7cNlwgoOalny2DHr4pVpuNTYPNSN6V-WJSana1mQSCv0A9FgW2TsnN979wHJpmA9XPnPs4MEKbOjWaK4kcAKuldOOAvdehX-942AUmm9w6banYWMu79DTumvtrzh6N-CHMHpsgkY0WGGMiDuhtuRrgtv4T5cMF8fHM79MFDXLMpdBy2gKCxKP3hD3ifoeoy5vAlSGoqzivsrfzXtPLpc5juvzZFhi_iTHJNeyVNBEkzwMEILaF_u4CiT0cAcBrbt917LpurTE0IrDlypOJql6YvgscokLxqI2K30N64nd7VxY5Spp1g8m1ZnCTbIyF9HbFQtjn5Hi6tO0-B559hCzHEz4mY_5zNif5B_2dtuzC-2W9mP9PvDQVwW3hkxyddMKd0Oo8xd3cRlf7Rt6dBbEQAMTcpizNbZr9LKaB6-OMrvdr8SarBw2CWk58hXQp3JY_iJSWG5Xln4uCo5x_1hhWJOv5MiSRm6dP_BRThrVcTsgwtZ7ErOHwGh7eR0cGCDAH2U5F9XWauaB0mp0fnbwk6xMnxXRQ5Mpesem6BL21bxHUFFuP-eFQIvolyb3pnvCr3Njxo8K8/download [following]
+--2016-06-16 12:32:18--  https://dl.boxcloud.com/d/1/68Jy8knXO2QKrBbbRXd88q2tjBgSZ-O1IHUO8OMH7MwUf963W573e-JFFoHJ7EAJDHUlZRmb-X5ltqHgFJGdPlmsPUdEAFW0e4hGculzAFt-rk7108ylZovCOs-FO8ii9nXylV6UIxzHX9-w2-qg37FMwEuDVyH_Sg8aqEWI7MX4GjTDg5nj9JRzNumSDRjwL1zf8nULuiLBEE5c_eeZReW2Pq3BnI6G44Tu2pD0l9tfXjF9fFTRaANo5phCkSU_2cAc2aGsXeTaI5zBiHjbclc2C2QHKsiSByzg13FXKBcnqbge2qzLRnjfyTQZjR6guZbX3x0tiMIYRtAs4xesRZ71R5PqFMiJ4qFM1c_ZEZJ82QqOEhgzT-pN6shMVfe9Quxm0b3rO_vr3gbOkpFD3qnNn8bkmznaGs2s2IDoR7qLHIjLU4mRpkV9_SFzEiOj4827LOtPNKgV0tSPiOu6PpudRQlfkYtnAP5WnHNBK9-mHkBQ79weScffqf8oNbsAPd_rqLAtyy9vcBZVpev08QOy_hhnzTCdyxVUrsPtgUc8Vowh_m1iK-AlKQFDdDn8JSNH8bqpEqHQcaNEp6UA-haJ_hd6hpKrftZSENiXaE7cNlwgoOalny2DHr4pVpuNTYPNSN6V-WJSana1mQSCv0A9FgW2TsnN979wHJpmA9XPnPs4MEKbOjWaK4kcAKuldOOAvdehX-942AUmm9w6banYWMu79DTumvtrzh6N-CHMHpsgkY0WGGMiDuhtuRrgtv4T5cMF8fHM79MFDXLMpdBy2gKCxKP3hD3ifoeoy5vAlSGoqzivsrfzXtPLpc5juvzZFhi_iTHJNeyVNBEkzwMEILaF_u4CiT0cAcBrbt917LpurTE0IrDlypOJql6YvgscokLxqI2K30N64nd7VxY5Spp1g8m1ZnCTbIyF9HbFQtjn5Hi6tO0-B559hCzHEz4mY_5zNif5B_2dtuzC-2W9mP9PvDQVwW3hkxyddMKd0Oo8xd3cRlf7Rt6dBbEQAMTcpizNbZr9LKaB6-OMrvdr8SarBw2CWk58hXQp3JY_iJSWG5Xln4uCo5x_1hhWJOv5MiSRm6dP_BRThrVcTsgwtZ7ErOHwGh7eR0cGCDAH2U5F9XWauaB0mp0fnbwk6xMnxXRQ5Mpesem6BL21bxHUFFuP-eFQIvolyb3pnvCr3Njxo8K8/download
+Resolving dl.boxcloud.com (dl.boxcloud.com)... 107.152.24.200, 74.112.185.96, 74.112.184.96
+Connecting to dl.boxcloud.com (dl.boxcloud.com)|107.152.24.200|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1784 (1.7K) [application/octet-stream]
+Saving to: `pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed'
+
+100%[=======================================================================================================================================================>] 1,784       --.-K/s   in 0s      
+
+2016-06-16 12:32:18 (46.3 MB/s) - `pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed' saved [1784/1784]
 
 Gwas Catalog number of SNP-phenotype associations:
 18950 GwasCatalog.bed
@@ -55,16 +76,16 @@ Gwas Catalog number of SNP-phenotype associations:
 ***Overlapping Phenotype SNPs with input bed***
 ***Finished overlapping GWAS Catalog Phenotype specific bed with input bed***
 ***Downloading hg19 chromosome sizes***
---2016-06-16 11:10:57--  https://genome.ucsc.edu/goldenpath/help/hg19.chrom.sizes
-Resolving genome.ucsc.edu (genome.ucsc.edu)... 128.114.119.132, 128.114.119.134, 128.114.119.135, ...
-Connecting to genome.ucsc.edu (genome.ucsc.edu)|128.114.119.132|:443... connected.
+--2016-06-16 12:32:55--  https://genome.ucsc.edu/goldenpath/help/hg19.chrom.sizes
+Resolving genome.ucsc.edu (genome.ucsc.edu)... 128.114.119.133, 128.114.119.136, 128.114.119.132, ...
+Connecting to genome.ucsc.edu (genome.ucsc.edu)|128.114.119.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 1971 (1.9K) [text/plain]
 Saving to: `hg19.chrom.sizes'
 
 100%[=======================================================================================================================================================>] 1,971       --.-K/s   in 0s      
 
-2016-06-16 11:10:57 (98.4 MB/s) - `hg19.chrom.sizes' saved [1971/1971]
+2016-06-16 12:32:55 (92.6 MB/s) - `hg19.chrom.sizes' saved [1971/1971]
 
 Human Genome size version hg19: 3137161264
 1249 ARNT.chipseq.cut.10000
@@ -82,10 +103,10 @@ GWAS Catalog Phenotype: Fat_distribution_(HIV) Total SNPs: 14 Overlap: 1 Fold ch
 GWAS Catalog Phenotype: Breast_size Total SNPs: 31 Overlap: 1 Fold change: 3.22581 Fraction of hg19 6.51831e-06 Peak coverage: 20449
 GWAS Catalog Phenotype: Periodontitis_(CDC-AAP) Total SNPs: 26 Overlap: 1 Fold change: 3.84615 Fraction of hg19 6.66176e-06 Peak coverage: 20899
 GWAS Catalog Phenotype: Keloid Total SNPs: 4 Overlap: 1 Fold change: 25 Fraction of hg19 6.50238e-06 Peak coverage: 20399
+GWAS Catalog Phenotype: CardiogramPlusC4D Total SNPs: 52 Overlap: 1 Fold change: 1.92308 Fraction of hg19 6.50238e-06 Peak coverage: 20399
 GWAS Catalog Phenotype: Response_to_alcohol_consumption_(flushing_response) Total SNPs: 3 Overlap: 1 Fold change: 33.3333 Fraction of hg19 6.66176e-06 Peak coverage: 20899
 GWAS Catalog Phenotype: Multiple_sclerosis_(severity) Total SNPs: 12 Overlap: 1 Fold change: 8.33333 Fraction of hg19 6.55019e-06 Peak coverage: 20549
 GWAS Catalog Phenotype: Tanning Total SNPs: 15 Overlap: 2 Fold change: 13.3333 Fraction of hg19 1.32119e-05 Peak coverage: 41448
-GWAS Catalog Phenotype: _CardiogramPlusC4D Total SNPs: 52 Overlap: 1 Fold change: 1.92308 Fraction of hg19 6.50238e-06 Peak coverage: 20399
 GWAS Catalog Phenotype: Systemic_lupus_erythematosus Total SNPs: 108 Overlap: 3 Fold change: 2.77778 Fraction of hg19 1.94912e-05 Peak coverage: 61147
 GWAS Catalog Phenotype: Obesity-related_traits Total SNPs: 833 Overlap: 5 Fold change: 0.60024 Fraction of hg19 3.38507e-05 Peak coverage: 106195
 GWAS Catalog Phenotype: Migraine Total SNPs: 70 Overlap: 2 Fold change: 2.85714 Fraction of hg19 1.31482e-05 Peak coverage: 41248
@@ -291,4 +312,5 @@ Loading required package: proto
 Scale for 'colour' is already present. Adding another scale for 'colour', which will replace the existing scale.
 null device 
           1 
+
 </pre>
