@@ -1,4 +1,7 @@
 #!/bin/bash
+
+SECONDS=0
+
 #download gwas catalog and create bed file with chr;position;position+1;proxy_gene;phenotype
 echo "
 #download gwas catalog 
@@ -96,7 +99,7 @@ echo ***Selecting FDR 10% overlaps***
 find -name "*sort.uniq.chrXY.overlap" -type f -exec wc -l {} + | grep -v total$ | sort -rn  | head -n5
 
 find -name "*sort.uniq.chrXY.overlap" -type f -exec wc -l {} + | grep -v total$ | sort -rn  | head -n100 > top
-cut -f5 -d" " top > top2
+awk '{print $2}' FS=' ' OFS='\t' top > top2
 tr '\n' ' ' < top2 >top3
 for i in $(cat top3); do cp $i $i.select;done
 
@@ -228,3 +231,6 @@ rm GWASCatalogPhenotype*
 rm top*
 rm hg19.chrom.sizes
 rm gwascatalog.txt
+
+duration=$SECONDS
+echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
