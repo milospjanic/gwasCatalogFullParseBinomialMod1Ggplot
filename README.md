@@ -29,7 +29,7 @@ Alcohol_dependence_(age_at_onset) 26 2 7.69231 1.30844e-05 41048
 ...
 </pre>
 #Output pdf
-[!Screenshot](https://github.com/milospjanic/gwasCatalogFullParseBinomialMod1Ggplot/blob/master/example.png)
+![Screenshot](https://github.com/milospjanic/gwasCatalogFullParseBinomialMod1Ggplot/blob/master/example.png)
 
 #Screen output
 <pre>
