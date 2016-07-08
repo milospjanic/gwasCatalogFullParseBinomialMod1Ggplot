@@ -1,5 +1,7 @@
 # gwasCatalogFullParseBinomialMod1Ggplot
 
+This script will connect to http://www.genome.gov, download GWAS Catalog, convert it to a bed file with columns chr;position;position+1;proxy_gene;phenotype, and then create separate bed files for each unique GWAS Catalog category from 5th column. It will then perform binomial statistics on your input bed file and such parsed collection of GWAS Catalog files using modified binomial as described in https://github.com/milospjanic/gwasanalytics. 
+
 #Output.table.txt
 <pre>
 GWAS Catalog Phenotype Total SNPs Overlap Fold change Fraction of hg19 Peak coverage
