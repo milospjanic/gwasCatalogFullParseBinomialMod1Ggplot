@@ -1,8 +1,8 @@
 # gwasCatalogFullParseBinomialMod1Ggplot
 
-This script will connect to http://www.genome.gov, download GWAS Catalog, convert it to a bed file with columns chr;position;position+1;proxy_gene;phenotype, and then create separate bed files for each unique GWAS Catalog category from 5th column. It will then perform binomial statistics on your input bed file and such parsed collection of GWAS Catalog files using modified binomial as described in https://github.com/milospjanic/gwasanalytics. 
+This script will connect to http://www.genome.gov, download GWAS Catalog. It will download and add CardiogramPlusC4D GWAS SNPs to the GWASCatalog. Next, it will convert downloaded GWAS Catalog file to a bed format with columns chr;position;position+1;proxy_gene;phenotype, and then create separate bed files for each unique GWAS Catalog category using 5th column as identifier. All special caracters will be removed and substituted with underscore. It will then perform binomial statistics on your input bed file and such parsed collection of GWAS Catalog files using modified binomial as described in https://github.com/milospjanic/gwasanalytics. Outputs are table with binomial -log10pvalues and fold changes in file output.table.txt and graphical representation in file output.pdf. Screen output will consist of series of intermediary steps and additional parameters. Examples of outputs shown below.
 
-#Output.table.txt
+#Textual output in output.table.txt
 <pre>
 GWAS Catalog Phenotype Total SNPs Overlap Fold change Fraction of hg19 Peak coverage
 Parkinson's_disease 76 2 2.63158 1.31801e-05 41348
@@ -30,7 +30,7 @@ Serum_dimethylarginine_levels_(symmetric) 30 1 3.33333 1.26704e-05 39749
 Alcohol_dependence_(age_at_onset) 26 2 7.69231 1.30844e-05 41048
 ...
 </pre>
-#Output pdf
+#Graphical output in output.pdf
 ![Screenshot](https://github.com/milospjanic/gwasCatalogFullParseBinomialMod1Ggplot/blob/master/example.png)
 
 #Screen output
