@@ -28,7 +28,8 @@ Serum_dimethylarginine_levels_(symmetric) 30 1 3.33333 1.26704e-05 39749
 Alcohol_dependence_(age_at_onset) 26 2 7.69231 1.30844e-05 41048
 ...
 </pre>
-
+#Output pdf
+[!Screenshot](
 #Screen output
 <pre>
 ./gwasCatalogFullScanBinomialGgplot.sh ARNT.chipseq.cut.10000 
