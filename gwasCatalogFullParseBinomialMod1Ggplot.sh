@@ -5,15 +5,19 @@ SECONDS=0
 #download gwas catalog and create bed file with chr;position;position+1;proxy_gene;phenotype
 echo "
 #download gwas catalog 
-wget http://www.genome.gov/admin/gwascatalog.txt
-awk -F\"\t\" '{if (\$12!=\"\") print \$12\"\t\"\$13\"\t\"\$15\"\t\"\$8}' gwascatalog.txt > tmp
-awk -F\"\t\" '{print \$1\"\t\"\$2\"\t\"\$2+1\"\t\"\$3\"\t\"\$4}' tmp > GwasCatalog.bed
-rm tmp" > GwasCatalog2Bed.sh
-chmod 775 GwasCatalog2Bed.sh
-./GwasCatalog2Bed.sh
 
-tail -n +2 GwasCatalog.bed > tmp
-mv tmp GwasCatalog.bed
+wget https://www.dropbox.com/s/43d9vh10k44jqbu/full.mod.crossmap.plus.snpsnpinteract
+
+#awk -F\"\t\" '{if (\$12!=\"\") print \$12\"\t\"\$13\"\t\"\$15\"\t\"\$8}' gwascatalog.txt > tmp
+#awk -F\"\t\" '{print \$1\"\t\"\$2\"\t\"\$2+1\"\t\"\$3\"\t\"\$4}' tmp > GwasCatalog.bed
+#rm tmp" > GwasCatalog2Bed.sh
+#chmod 775 GwasCatalog2Bed.sh
+#./GwasCatalog2Bed.sh
+
+cp full.mod.crossmap.plus.snpsnpinteract GwasCatalog.bed
+
+#tail -n +2 GwasCatalog.bed > tmp
+#mv tmp GwasCatalog.bed
 
 
 #adding CardiogramPlusC4D to GWASCatalog
@@ -23,7 +27,7 @@ awk '{print $1,$2,$3,$4,"CardiogramPlusC4D"}' FS='\t' OFS='\t' CARDIOGRAMplusC4D
 sed -i 's/^chr//g' CARDIOGRAMC4Dplusnovel.txt.tmp
 cat CARDIOGRAMC4Dplusnovel.txt.tmp >> GwasCatalog.bed
 rm CARDIOGRAMC4Dplusnovel.txt.tmp
-sed -i 's/\//-/g' GwasCatalog.bed 
+#sed -i 's/\//-/g' GwasCatalog.bed 
 
 awk -F'\t' '
     FNR == 1 { header = $0;next }
