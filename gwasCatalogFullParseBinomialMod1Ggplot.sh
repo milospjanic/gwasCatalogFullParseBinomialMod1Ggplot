@@ -21,13 +21,15 @@ cp full.mod.crossmap.plus.snpsnpinteract GwasCatalog.bed
 
 
 #adding CardiogramPlusC4D to GWASCatalog
+
 wget https://stanfordmedicine.box.com/shared/static/pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed
 mv pqxkuzwgv8bhl8ne05a3ohlmzgwbir28.bed CARDIOGRAMplusC4DleadSNPs.bed
+
 awk '{print $1,$2,$3,$4,"CardiogramPlusC4D"}' FS='\t' OFS='\t' CARDIOGRAMplusC4DleadSNPs.bed  > CARDIOGRAMC4Dplusnovel.txt.tmp
 sed -i 's/^chr//g' CARDIOGRAMC4Dplusnovel.txt.tmp
 cat CARDIOGRAMC4Dplusnovel.txt.tmp >> GwasCatalog.bed
 rm CARDIOGRAMC4Dplusnovel.txt.tmp
-#sed -i 's/\//-/g' GwasCatalog.bed 
+sed -i 's/\//-/g' GwasCatalog.bed 
 
 awk -F'\t' '
     FNR == 1 { header = $0;next }
