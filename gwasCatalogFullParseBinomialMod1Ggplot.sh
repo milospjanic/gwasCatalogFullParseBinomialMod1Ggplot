@@ -70,7 +70,7 @@ for file in `find . -name "GWASCatalogPhenotype_*.txt.cut.sort.uniq"`
 do
 sed -i 's/^23/X/g' $file
 sed -i 's/^24/Y/g' $file
-sed  's/^/chr/g' $file >  $file.chrXY
+cp $file $file.chrXY
 rm $file
 done
 
