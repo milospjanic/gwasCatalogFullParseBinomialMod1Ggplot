@@ -82,6 +82,10 @@ echo ***Overlapping Phenotype SNPs with input bed***>>report.txt
 for file in `find . -name "GWASCatalogPhenotype_*.txt.cut.sort.uniq.chrXY"`
 do
 bedtools intersect -a $file -b $1 > $file.overlap
+
+sort -k1,1V -k2,2n $file.overlap | uniq > $file.overlap.sortuniq
+cp $file.overlap.sortuniq $file.overlap
+
 filename=$(basename $file .txt.cut.sort.uniq.chrXY)
 echo Overlap: ${filename##GWASCatalogPhenotype_} >>report.txt
 wc -l < $file.overlap >>report.txt
