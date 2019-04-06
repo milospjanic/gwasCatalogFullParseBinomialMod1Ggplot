@@ -97,7 +97,7 @@ echo Human Genome size version hg19: $hg19
 
 #bedtools merge on input bed
 sort -k1,1V -k2,2n $1 > tmp
-bedtools merge -n -i tmp > $1
+bedtools merge -i tmp > $1
 wc -l $1
 rm tmp
 
