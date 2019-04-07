@@ -220,9 +220,9 @@ echo "print(\"***Final table - top 25 categories - for plot - output.pdf***\")" 
 echo "data">>script.R
 
 #removing Inf > to 10x max value
-echo "data[data\$LogP == \"Inf\",]\$LogP<-0">>script.R
-echo "data[data\$LogP == \"0\",]\$LogP<-max(data\$LogP)*10">>script.R
-echo "data">>script.R
+#echo "data[data\$LogP == \"Inf\",]\$LogP<-0">>script.R
+#echo "data[data\$LogP == \"0\",]\$LogP<-max(data\$LogP)*10">>script.R
+#echo "data">>script.R
 
 #making ggplot2 graph
 echo "library(ggplot2)" >> script.R
